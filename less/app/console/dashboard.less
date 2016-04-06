@@ -1,0 +1,194 @@
+@import "../../variables.less";
+@import "../lib/functions.less";
+
+.console-dashboard {
+    .gx-init();
+
+    .dashboard-left {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 274px;
+        height: 100%;
+        font-size: 12px;
+        border-right: 1px solid #d9d9d9;
+        background-color: #3EC03B;
+        z-index: 1;
+
+        .logo {
+            top: 14px;
+            position: relative;
+        }
+
+        .control {
+            position: relative;
+            background-color: #20b11d;
+            border-bottom: solid 1px #48a64c;
+            line-height: 55px;
+            height: 55px;
+            padding: 0 20px;
+
+            a {
+                font-size: 14px;
+            }
+
+            .language {
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 5px;
+                padding: 4px 8px;
+                height: 30px;
+                line-height: 30px;
+                margin-top: 12px;
+                font-size: 14px;
+                color: #fff;
+                z-index: 3;
+            }
+
+            .ct-menu {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                z-index: 2;
+                line-height: 14px;
+            }
+
+            .ct-menu a {
+                color: #8d8f8f;
+            }
+        }
+
+        .account {
+            position: relative;
+            padding: 0 20px;
+            height: 52px;
+            line-height: 52px;
+            border-bottom: solid 1px #49a94d;
+
+            .avatar {
+                margin: 10px 7px 0 0;
+
+                img {
+                    border-radius: 50%;
+                    height: 28px;
+                    width: 28px;
+                    border: solid 1px #8ecc91;
+                }
+            }
+
+            .email,
+            .more {
+                display: inline-block;
+                color: #fff;
+                font-size: 14px;
+                text-decoration: none;
+                height: inherit;
+                line-height: inherit;
+            }
+        }
+
+        .projects {
+            .mine-projects {
+                color: #fff;
+            }
+
+            .empty {
+                display: block;
+                text-align: center;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                width: 210px;
+                margin: 20px;
+                padding: 10px;
+                color: #666;
+                font-size: 14px;
+                background-color: #fffc00;
+            }
+
+            h3 {
+                font-size: 12px;
+                font-weight: 500;
+                height: 13px;
+                line-height: 13px;
+                color: rgba(255,255,255,.5);
+                margin: 10px 0 10px 20px;
+                padding: 0;
+            }
+
+            ul, li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+            li a {
+                padding: 2px 20px;
+                display: block;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #fff;
+                text-decoration: none;
+
+                i {
+                    font-size: 12px;
+                    display: inline-block;
+                    margin-right: 6px;
+                }
+
+                &:hover,
+                &.hover {
+                    background-color: #20b11d;
+                    color: #fffc00;
+                }
+
+                &.big {
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 16px;
+
+                    i {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .second-li {
+                margin-top: 20px;
+            }
+        }
+
+        .homes {
+            position: relative;
+            height: 100%;
+        }
+
+        .tips {
+            position: absolute;
+            bottom: 75px;
+            margin: 0 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: solid 1px #3e8e41;
+            background-color: #fff;
+            color: #66bb6a;
+
+            .content {
+                padding: 12px;
+            }
+
+            .icon {
+                width: 25px;
+                float: left;
+                font-size: 16px;
+            }
+
+            .text {
+                width: 170px;
+                float: left;
+
+                p {
+                    margin: 5px 0 0 0;
+                }
+            }
+        }
+    }
+}

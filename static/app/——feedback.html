@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/public.js"></script>
+    <script language="javascript" type="text/javascript" src="js/swiper.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".mBm_btn1").click(function () {
+                var userName = getCookie("userName");
+                if (userName == null || userName == "") {
+                    window.location.href = "login.html";
+                } else {
+
+                    var opinion = $("#opinion").val();
+                    var mobile = $("#mobile").val();
+                    var paramData = { userName: userName, opinion: opinion, mobile: mobile };
+                    var url = "http://192.168.1.234:819/api/feedbacks";
+                    //var url = "http://118.26.238.245/webapi/api/users/actions/login";
+                    $.ajax
+                    ({
+                        url: url,
+                        type: "post",
+                        dataType: "json",
+                        data: JSON.stringify(paramData),
+                        success: function (result) {
+                            window.location.href = "setting.html"
+                        },
+                        error: function myfunction(errordata) {
+                            if (errordata.status == "401") {
+                                alert("帐号密码不正确！");
+                            }
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="mTop">
+        <a href="setting.html" class="mTop_back"></a>
+        意见反馈
+    </div>
+    <div class="m2fmBox">
+        <textarea class="m2fm_area" placeholder="欢迎您提出宝贵意见" name="opinion" id="opinion" cols="" rows=""></textarea>
+        <input class="m2fm_int" placeholder="请输入您的手机号码" name="mobile" id="mobile" type="text">
+    </div>
+    <div class="m2stxt2">
+        您也可以通过以下联系方式联系我们<br>
+        邮箱：test@test.com
+    </div>
+    <a class="mBm_btn1" href="javacript:;">提交</a>
+</body>
+</html>

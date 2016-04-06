@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/public.js"></script>
+    <script language="javascript" type="text/javascript" src="js/swiper.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/custom.js"></script>
+</head>
+<body>
+    <div class="mTop">
+        <a href="messAge.html" class="mTop_back"></a>
+        消息通知
+    </div>
+    <div class="mMes_t"></div>
+    <div class="mMes_info">&nbsp;&nbsp;<span id="mMes_Date"></span> &nbsp;&nbsp;<span id="mMes_sUserName"></span></div>
+    <div class="mMes_txt">
+
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function () {
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return "";
+        }
+        var id = GetQueryString("id");
+        if (id === "") {
+            return;
+        }
+        var url = "http://118.26.238.245/webapi/api/message/" + id;
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: "jsonp",
+        }).success(function (data) {
+            $(".mMes_t").text(data.msgTitle);
+            $("#mMes_Date").text(data.addDateStr);
+            $(".mMes_txt").text(data.content);
+            $("#mMes_sUserName").text(data.senderUserName);
+        }).error(function (xhr, status) {
+            console.log(xhr);
+            console.log(status);
+        });
+    });
+</script>

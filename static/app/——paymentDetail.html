@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/public.js"></script>
+    <script language="javascript" type="text/javascript" src="js/swiper.min.js"></script>
+</head>
+<body>
+    <div class="mTop">
+        <a href="javascript:void(history.back(-1))" class="mTop_back"></a>
+        党费缴纳
+    </div>
+    <div class="m2jf_icon autoImg"><img src="images/jf_icon1.png"></div>
+    <div class="m2jf_stxt">本次待缴纳党费：<span class="cor_red">45.5元</span></div>
+    <a class="mBm_btn1" href="paymentDetail.html">立即缴费</a>
+
+    <!--支付方式-->
+    <div class="mLayerBg"></div>
+    <div class="mPayLaer">
+        <i class="mPay_close"><a href="partyToPay.html"></i>
+        <div class="mPay_t1">缴费详情</div>
+        <ul class="mPay_pitms">
+            <!--<li>缴费方式：<a href="javascript:;" class="mPay_md">支付宝</a></li>-->
+            <li>缴费方式：<a href="paymentType.html" class="mPay_md">支付宝</a></li>
+            <li>缴费金额：<span class="mPay_mn">45.5元</span></li>
+        </ul>
+        <a href="partyPayMenu.html" class="mBm_btn1">确认付款</a>
+    </div>
+
+    <script language="javascript">
+        $(".mPay_close").click(function () {
+            $(".mPayLaer,.mLayerBg").fadeOut(300);
+            $(".mPayLaer").addClass("mPayLaer2");
+        });
+    </script>
+</body>
+</html>

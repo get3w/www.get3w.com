@@ -1,0 +1,169 @@
+@import "../../variables.less";
+@import "../lib/functions.less";
+.console-tree {
+  .gx-init();
+  li {
+    padding: 1px;
+  }
+
+  // icon
+  .icon-file-directory::before {
+    font-family: 'octicons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    content: "\f016";
+  }
+  .icon-file-text::before {
+    font-family: 'octicons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    content: "\f011";
+  }
+  .icon-trashcan{
+    float: right;
+  }
+  .icon-trashcan:hover{
+    color: red;
+  }
+  .icon-trashcan::before {
+    font-family: 'octicons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    content: "\f0d0";
+  }
+  .icon::before {
+    margin-right: 5px;
+  }
+  .tree-view {
+    min-width: -webkit-min-content;
+    min-height: 100%;
+    padding-left: 5px;
+    padding-right: 10px;
+    position: relative;
+    font-size: 12px;
+
+    //&:focus::before {
+    //    opacity: 1;
+    //    transform: scaleY(1);
+    //    transition: opacity 0.16s, transform 0.32s cubic-bezier(0, 0.6, 0.2, 1);
+    //}
+    &::before {
+      content: "";
+      position: fixed;
+      pointer-events: none;
+      z-index: 1;
+      top: 0.5em;
+      left: 0;
+      height: 3em;
+      bottom: 0;
+      width: 2px;
+      background: #4777d7;
+      opacity: 0;
+      transform: scaleY(0);
+      transition: opacity 0.16s, transform 0.16s cubic-bezier(0.8, 0, 0.9, 0.53);
+    }
+    .entry:before {
+      content: '';
+      position: absolute;
+    }
+    .list-tree {
+      position: static;
+    }
+    .header {
+      position: relative;
+    }
+    .selected:before {
+      background: rgba(128, 128, 128, 0.08);
+    }
+  }
+  .list-tree {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: pointer;
+    .icon {
+      display: inline-block;
+      height: inherit;
+      &::before {
+        line-height: inherit;
+        height: inherit;
+        vertical-align: top;
+        margin-right: 5px;
+        position: relative;
+      }
+    }
+    li.list-nested-item > .list-item {
+      line-height: 2em;
+    }
+    .selected::before {
+      content: '';
+      background-color: rgba(128, 128, 128, 0.16);
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 25px;
+    }
+    li.list-item {
+      margin-left: 17px;
+      line-height: 2em;
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+    .list-nested-item > .list-tree > li {
+      padding-left: 17px;
+    }
+    .list-nested-item.collapsed > .list-item::before {
+      left: 1px;
+      font-family: 'octicons';
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      text-decoration: none;
+      font-size: 12px;
+      width: 12px;
+      height: 12px;
+      content: "\f078";
+    }
+    .list-nested-item > .list-item::before {
+      text-align: center;
+      position: relative;
+      top: -1px;
+      margin-right: 5px;
+      font-family: 'octicons';
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      text-decoration: none;
+      font-size: 12px;
+      width: 12px;
+      height: 12px;
+      content: "\f0a3";
+    }
+  }
+}

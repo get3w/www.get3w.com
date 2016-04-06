@@ -1,0 +1,170 @@
+@import "../../variables.less";
+@import "../lib/functions.less";
+
+.console-auth {
+    .gx-init();
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-linear-gradient(70deg, #65d165 10%, #57d39c 80%);
+    background-image: -o-linear-gradient(70deg, #65d165 10%, #57d39c 80%);
+    background-image: linear-gradient(160deg, #65d165 10%, #57d39c 80%);
+
+    .input-box {
+        position: absolute;
+        top: 100px;
+        right: 50%;
+        width: 450px;
+        margin-right: -225px;
+        background-color: #fff;
+        border-radius: 5px;
+        padding-top: 20px;
+        padding-bottom: 45px;
+
+        &.forget {
+            height: 330px;
+            margin-top: -165px;
+        }
+
+        .container {
+            margin: 30px 60px;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .email, .password {
+            display: block;
+            height: 38px;
+            line-height: 38px;
+            width: 100%;
+            border-radius: 3px;
+            background: transparent;
+            color: #888;
+            border: solid 1px #d2d2d2;
+            text-indent: 10px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+
+            &:foucs {
+                outline: none;
+                border: 1px solid green;
+            }
+        }
+
+        .error {
+            border: solid 1px #eb6767;
+        }
+    }
+
+    .third {
+        .line {
+            position: relative;
+            border-color: transparent;
+            border-top: solid 1px #edf1f3;
+            height: 1px;
+            line-height: 1px;
+            margin-top: 45px;
+            margin-bottom: 35px;
+
+            .text {
+                position: absolute;
+                width: 160px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                left: 50%;
+                margin-left: -80px;
+                top: -10px;
+                color: #888;
+                background-color: #fff;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .third-sns {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+
+        .fa {
+            display: inline-block;
+            height: 61px;
+            width: 61px;
+            line-height: 61px;
+            text-align: center;
+            font-size: 33px;
+            text-decoration: none;
+            border-radius: 50%;
+
+            &:hover {
+                color: #fff;
+            }
+
+            &.fa-weibo {
+                color: #eb6767;
+                border: solid 1px #eb6767;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #eb6767;
+                }
+            }
+
+            &.fa-wechat {
+                color: #5cb85c;
+                border: solid 1px #5cb85c;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #5cb85c;
+                }
+            }
+
+            &.fa-qq {
+                color: #489dff;
+                border: solid 1px #489dff;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #489dff;
+                }
+            }
+
+            &.fa-facebook {
+                color: #3b5b98;
+                border: solid 1px #3b5b98;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #3b5b98;
+                }
+            }
+        }
+    }
+
+    .login-back {
+        font-size: 14px;
+
+        a {
+            text-decoration: none;
+        }
+
+        .red {
+            color: #eb6767;
+        }
+
+        .grey {
+            color: #888888;
+        }
+    }
+}

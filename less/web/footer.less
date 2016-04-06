@@ -1,0 +1,72 @@
+// Start Styles
+.footer-green {
+  .title {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+  }
+  .subtitle {
+    font-size: 18px;
+    line-height: 1.2;
+    color: rgb(255, 255, 255);
+  }
+}
+.footer-grey {
+  font-size: 18px;
+  padding: 50px 0;
+  text-transform: capitalize;
+  color: #666;
+  background-color: #fbfaf7;
+  .register-btn {
+    margin-left: 15px;
+    color: #fff;
+    background-color: #52c27d;
+    font-size: 16px;
+    &:hover {
+      color: rgba(255, 255, 255, .8);
+      background-color: #52c27d;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .footer-grey {
+    .register-btn {
+      display: block;
+      width: 50%;
+      margin: 15px auto;
+    }
+  }
+}
+// Footer Styles
+.footer {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  overflow: hidden;
+  padding: 50px 0;
+  color: #666;
+  background: rgba(255, 255, 255, .8);
+  .footer-logo {
+    img {
+      height: 40px;
+    }
+  }
+  a {
+    display: block;
+    margin: 7px 0;
+    color: @green;
+  }
+  .footer-title {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 25px;
+    margin: 6px 0 15px;
+    text-transform: uppercase;
+    color: #666;
+  }
+  .footer-legal {
+    margin-top: 50px;
+    text-align: center;
+  }
+}

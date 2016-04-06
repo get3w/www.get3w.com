@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/public.js"></script>
+    <script language="javascript" type="text/javascript" src="js/swiper.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var userName = getCookie("userName");
+            if (userName == null || userName == "") {
+                //window.location.href = "login.html";
+                $(".displayName").html("<a href=\"login.html\">登录</a>");
+            } else {
+
+                //var paramData = { username: username, password: password };
+                //var url = "http://192.168.1.234:819/api/users/" + userName;
+                var url = "http://118.26.238.245/webapi/api/users/" + userName;
+                $.ajax
+                ({
+                    url: url,
+                    type: "get",
+                    dataType: "jsonp",
+                    //data: JSON.stringify(paramData),//$("#frm").serializeArray(),
+                    success: function (data) {
+                        $(".displayName").text(data.user.displayName);
+                        $(".userAvatar").text(data.user.avatarUrl);
+                    },
+                    error: function myfunction(XMLHttpRequest, textStatus, errorThrown) {
+                        //alert(XMLHttpRequest.state);
+                        //alert(XMLHttpRequest.readyState);
+                        //alert(textStatus);
+                    }
+                });
+            }
+
+            $("#layout").click(function () {
+                delCookie("userName");
+                window.location.reload(true);
+                $(".mLayerBg").fadeIn(300);
+                $(".perLayer").addClass("perLayerIn");
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="mTop">
+        <a href="#" class="mTop_perIcon"></a>
+        业务
+    </div>
+    <ul class="m2itmUl autoImg">
+        <li><a href="busPartyPayMenu.html"><img src="images/m2itmBg.jpg"></a></li>
+        <li><a href="#"><img src="images/m2itmBg2.jpg"></a></li>
+        <li><a href="#"><img src="images/m2itmBg3.jpg"></a></li>
+    </ul>
+    <div class="ftEmpty"></div>
+    <ul class="footer">
+        <li><a class="foot_a on" href="index.html"><img src="images/ft_icon1.png"><img class="foot_aimg" src="images/ft_icon1a.png">首页</a></li>
+        <li><a class="foot_a" href="business.html"><img src="images/ft_icon2.png"><img class="foot_aimg" src="images/ft_icon2a.png">业务</a></li>
+        <li><a class="foot_a" href="OrgDynamics.html"><img src="images/ft_icon3.png"><img class="foot_aimg" src="images/ft_icon3a.png">组织</a></li>
+    </ul>
+
+    <!--个人中心弹出-->
+    <div class="mLayerBg hidden"></div>
+    <div class="perLayer">
+        <div class="per_head clearfix">
+            <div class="perHdImg autoImg"><img src="images/pheader.jpg" class="userAvatar"></div>
+            <div class="perInfo2">
+                <strong class="displayName">欧阳娜娜</strong>
+                <p>中国移动浙江分公司<br>党支部委员</p>
+            </div>
+        </div>
+        <ul class="perMenu">
+            <li><a href="userInfo.html" class="perMenu_a"><img src="images/per_icon1.png"><img class="per_cutImg" src="images/per_icon1a.png">基本资料</a></li>
+            <li><a href="messAge.html" class="perMenu_a"><img src="images/per_icon2.png"><img class="per_cutImg" src="images/per_icon2a.png">消息通知</a></li>
+            <li><a href="partyPayMenu.html" class="perMenu_a"><img src="images/per_icon3.png"><img class="per_cutImg" src="images/per_icon3a.png">党费缴纳</a></li>
+            <li><a href="ChangeRole.html" class="perMenu_a"><img src="images/per_icon4.png"><img class="per_cutImg" src="images/per_icon4a.png">切换角色</a></li>
+            <li><a href="changePassword.html" class="perMenu_a"><img src="images/per_icon5.png"><img class="per_cutImg" src="images/per_icon5a.png">账号安全</a></li>
+            <li><a href="setting.html" class="perMenu_a"><img src="images/per_icon6.png"><img class="per_cutImg" src="images/per_icon6a.png">设置</a></li>
+            <li><a href="javascript:;" class="perMenu_a perMenu_Cuta" id="layout"><img src="images/per_icon7.png"><img class="per_cutImg" src="images/per_icon7a.png">退出登录</a></li>
+        </ul>
+        <div class="perBomLg"><img src="images/lg_yd.jpg"></div>
+    </div>
+</body>
+</html>

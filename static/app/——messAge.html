@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/public.js"></script>
+    <script language="javascript" type="text/javascript" src="js/swiper.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/custom.js"></script>
+</head>
+<body>
+    <div class="mTop">
+        <a href="index.html" class="mTop_back"></a>
+        消息通知
+    </div>
+    <ul class="m2u2">
+        <li class="clearfix">
+            <a href="消息通知-内页.html">
+                <div class="m2u2_time">2016-03-17</div>
+                <strong>两会授权发布：政府工作报告</strong>
+                <p>过去一年，我国发展面临多重困难和严峻挑战。在以习近平同志为总书记的党中央坚强领导下...</p>
+        </li>
+        <li class="clearfix">
+            <a href="消息通知-内页.html">
+                <div class="m2u2_time">2016-03-17</div>
+                <strong>两会授权发布：政府工作报告</strong>
+                <p>过去一年，我国发展面临多重困难和严峻挑战。在以习近平同志为总书记的党中央坚强领导下...</p>
+        </li>
+        <li class="clearfix">
+            <a href="消息通知-内页.html">
+                <div class="m2u2_time">2016-03-17</div>
+                <strong>两会授权发布：政府工作报告</strong>
+                <p>过去一年，我国发展面临多重困难和严峻挑战。在以习近平同志为总书记的党中央坚强领导下...</p>
+        </li>
+        <li class="clearfix">
+            <a href="消息通知-内页.html">
+                <div class="m2u2_time">2016-03-17</div>
+                <strong>两会授权发布：政府工作报告</strong>
+                <p>过去一年，我国发展面临多重困难和严峻挑战。在以习近平同志为总书记的党中央坚强领导下...</p>
+        </li>
+    </ul>
+</body>
+</html>
+
+
+<script type="text/javascript">
+    $(function () {
+        var receiverUserName = getCookie("userName");// "wanglin";
+        if (receiverUserName == "") {
+            return;
+        }
+        var paramData = { receiverUserName: receiverUserName };
+        var url = "http://118.26.238.245/webapi/api/message/querymessage";
+        $.ajax
+        ({
+            url: url,
+            type: "post",
+            dataType: "json",
+            data: JSON.stringify(paramData),
+            success: function (data) {
+                var message = data.message;
+                if (message.length > 0) {
+                    for (var i = 0; i < message.length; i++) {
+                        var aStr = '<a href="messAgeDetail.html?id=' + message[i].id + '">';
+                        var lifix = '<li class="clearfix">' + aStr + '<div class="m2u2_time">';
+                        var dateStr = message[i].addDateStr;
+                        lifix += dateStr + '</div><strong>';
+                        var titleStr = message[i].msgTitle;
+                        lifix += titleStr + '</strong><p>';
+                        var contentStr = message[i].content;
+                        lifix += contentStr + '</p> </li>';
+                        $('.m2u2').append(lifix);
+                    }
+                }
+            },
+            error: function myfunction(XMLHttpRequest, textStatus, errorThrown) {
+                //console.log(XMLHttpRequest.state);
+                //console.log(XMLHttpRequest.readyState);
+                //console.log(textStatus);
+            }
+        });
+    });
+</script>

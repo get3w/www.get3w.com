@@ -1,0 +1,496 @@
+@import "../../variables.less";
+@import "../lib/functions.less";
+
+.console_window {
+    .gx-init();
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    background-color: #fff;
+    box-shadow: 0 3px 6px #555;
+    z-index: 9999;
+    overflow: hidden;
+    display: none;
+
+    .close_btn {
+        font-size: 28px;
+        margin: 0 15px 0 0;
+        color: #fff;
+    }
+
+    .bd {
+        background-color: #fff;
+    }
+
+    .bd .l {
+        position: relative;
+    }
+
+    .hd li {
+        float: left;
+        position: relative;
+        width: 200px;
+    }
+
+    .hd li a {
+        display: block;
+        width: 200px;
+        text-align: center;
+        line-height: 48px;
+        height: 44px;
+        border-bottom: 2px solid #3bbf38;
+        color: #afe1af;
+    }
+
+    .hd li .on {
+        border-bottom: 2px solid #ffff8d;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .bd .inner {
+        width: 364px;
+        height: 200px;
+        margin: 105px auto 0;
+        display: none;
+    }
+
+    .bd .inner .t_box .btn {
+        display: block;
+        width: 364px;
+        height: 40px;
+        background: #3bbf38;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 3px;
+        box-shadow: 0 3px 4px #ccc;
+    }
+
+    .bd .inner .s {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .bd .inner .t_box, .bd .inner .btn_box {
+        position: relative;
+    }
+
+    .bd .inner .btn_box .btn {
+        display: block;
+        width: 138px;
+        height: 37px;
+        text-align: center;
+        line-height: 37px;
+        background: #eee;
+        color: #000;
+        box-shadow: 0 3px 4px #ccc;
+        font-size: 14px;
+    }
+
+    .onehd {
+        background: none;
+    }
+
+    .oneinner {
+        padding: 30px 0;
+    }
+
+    .oneinner .t, .oneinner .m, .oneinner .b {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .oneinner .m p {
+        font-size: 14px;
+    }
+
+    .oneinner .m .p1 {
+        font-size: 22px;
+        color: #000;
+        margin-bottom: 10px;
+    }
+
+    .oneinner .b .btn_box {
+        width: 156px;
+        height: 37px;
+        position: relative;
+        margin: 0 auto 15px;
+    }
+
+    .oneinner .b .btn_box .btn {
+        display: block;
+        width: 156px;
+        height: 37px;
+        background: #3bbf38;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        line-height: 37px;
+        border-radius: 3px;
+        box-shadow: 0 3px 4px #ccc;
+    }
+
+    .oneinner .b .az p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .oneinner .b .p2 a {
+        font-size: 36px;
+        color: #c0c0c0;
+        margin: 0 5px;
+    }
+
+    .check_wrap .txt {
+        width: 465px;
+        margin-left: 10px;
+    }
+
+    .check_wrap .txt .h {
+        color: #000;
+        margin-bottom: 5px;
+    }
+
+    .check_wrap .item {
+        margin-bottom: 10px;
+    }
+
+    .threehd .tit {
+        color: #fff;
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    .threehd {
+        width: 100%;
+        height: 46px;
+        line-height: 46px;
+        background: #3bbf38;
+        box-shadow: 0 3px 4px #bbb;
+    }
+
+    .threeinner {
+        width: 570px;
+        margin: 0 auto;
+        padding: 25px;
+    }
+
+    .threeinner .sure_btn_box {
+        width: 156px;
+        height: 37px;
+        margin: 30px auto 20px;
+        position: relative;
+    }
+
+    .threeinner .sure_btn {
+        display: block;
+        background: #3bbf38;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        line-height: 37px;
+        cursor: pointer;
+        border-radius: 3px;
+        box-shadow: 0 3px 4px #ccc;
+        border: 0 none;
+    }
+
+    .r_box .fourinner {
+        display: none;
+    }
+
+    .l_box {
+        width: 213px;
+        height:100%;
+        background: #fcfcfc;
+
+        .fourhd {
+            height: 47px;
+            line-height: 47px;
+            color: #777;
+            text-indent: 20px;
+            font-size: 14px;
+            position: relative;
+            text-align:left;
+            border-right: solid 1px #dedede;
+        }
+
+        .fourbd > .t > ul {
+            box-shadow: 2px 0 2px #dedede;
+            border-right:solid 1px #dedede;
+            text-align:left;
+        }
+
+        .fourbd > .t > ul > li {
+            height: 47px;
+            line-height: 47px;
+            padding: 0;
+            text-align:left;
+        }
+
+        .fourbd > .t > ul > li a {
+            display: block;
+            color: #000;
+            position: relative;
+            /*text-indent: 40px;*/
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .fourbd > .t > ul > li {
+            background: #fff;
+            border-left: 3px solid #dedede;
+            text-indent:26px;
+        }
+
+        .fourbd > .t > ul > li:hover {
+            box-shadow: none;
+            position: relative;
+        }
+        /*.fourbd> .t>ul> li a:after{
+    content:"";
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background: #b5b5b5;
+    border-radius: 50%;
+    }*/
+        .fourbd > .t > ul .on, .fourbd > .t > ul > li:hover {
+            background: #e9eef1;
+            border-left: 3px solid #20b11d;
+        }
+
+        .fourbd > .t > ul .on a, .l_box .fourbd > .t > ul > li:hover a {
+            color: @green-A700;
+            font-weight: bold;
+        }
+
+        .fourbd > .t .on a:after, .fourbd > .t > ul > li:hover a:after {
+            background: #dc4437;
+        }
+
+        .fourbd { text-align:left !important;}
+        .fourhd {
+            .b {
+                border-top: 1px solid #e8e8e8;
+            }
+
+            .b li a {
+                padding-left: 10px;
+                font-size: 14px;
+            }
+
+            .b li a i {
+                color: #959595;
+                margin-right: 15px;
+                font-size: 20px;
+                vertical-align: -3px;
+            }
+
+            .b .on i, .b li:hover i {
+                color: #dc4437;
+            }
+
+            .b .on {
+                border: none;
+            }
+        }
+    }
+
+    .show_img {
+        display: block;
+        width: 168px;
+        float: left;
+        margin: 7px;
+        box-shadow: 0 0 2px #555;
+        position: relative;
+
+        .title_des {
+            position: absolute;
+            color: #fff;
+            top: 0;
+            width: 168px;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+            display: none;
+
+            h2 {
+                display: block;
+                height: 20%;
+                margin-top: 10%;
+                line-height: 1.6;
+                font-size: 16px;
+            }
+
+            h3 {
+                display: block;
+                height: 70%;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .r_box {
+        width: 557px;
+        background-color: #fff;
+        padding: 0 15px;
+        text-align:left;
+    }
+
+    .r_box .fourhd {
+        height: 47px;
+        line-height: 47px;
+        color: #777;
+        text-indent: 10px;
+        font-size: 14px;
+        border-bottom: 1px solid #e8e8e8;
+        /*margin-bottom: 20px;*/
+    }
+
+    .fourhd .close_btn {
+        color: black;
+    }
+    .r_box {
+        height:100%;
+        background:#fff;
+    }
+    .r_box .fourbd dl {
+        margin-bottom: 15px;
+    }
+
+    .r_box .fourbd dt {
+        color: #000;
+        margin-bottom: 5px;
+    }
+
+    .r_box .fourbd dd {
+        color: #7a7a7a;
+        margin-bottom: 5px;
+    }
+
+    .r_box .bd_height {
+        height:100%;
+        width: 102%;
+        overflow-y: auto;
+    }
+
+    .sure_btn_box {
+        width: 156px;
+        height: 37px;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .sure_btn {
+        display: block;
+        background: #3bbf38;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        line-height: 37px;
+        border-radius: 3px;
+        box-shadow: 0 3px 4px #ccc;
+    }
+
+    .sixinner {
+        padding: 0 0 80px;
+    }
+
+    .sixinner .t, .sixinner .m, .sixinner .b {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sixinner .t .tit {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .sixinner .m {
+        width: 700px;
+        margin: 0 auto 20px;
+        padding: 40px 0 0;
+        background: #f1f1f1;
+    }
+
+    .effect {
+        width: 505px;
+        margin: 0 auto;
+        height: 250px;
+    }
+
+    .effect .sixhd a {
+        top: 210px;
+    }
+
+    .effect .sixhd {
+        text-align: center;
+    }
+
+    .effect .sixhd ul {
+        position: absolute;
+        bottom: 50px;
+        text-align: center;
+        width: 100%;
+        left: 0;
+    }
+
+    .effect .sixhd li {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: #b5b5b5;
+        border-radius: 50%;
+        margin-left: 5px;
+    }
+
+    .effect .sixhd .on {
+        background: #dc4437;
+    }
+
+    .effect .prev {
+        position: absolute;
+        left: 80px;
+        width: 38px;
+        height: 103px;
+        background: url(/assets/img/l_arr.png) no-repeat 0 0;
+    }
+
+    .effect .next {
+        position: absolute;
+        right: 80px;
+        width: 38px;
+        height: 103px;
+        background: url(/assets/img/r_arr.png) no-repeat 0 0;
+    }
+
+    .hd .tit {
+        color: #fff;
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    .hd {
+        width: 100%;
+        height: 46px;
+        line-height: 46px;
+        background: #3bbf38;
+        box-shadow: 0 3px 4px #bbb;
+    }
+
+    .whitehd {
+        background-color: #fff;
+    }
+
+    .whitehd .close_btn {
+        margin-top: 10px;
+        color: #000;
+    }
+}

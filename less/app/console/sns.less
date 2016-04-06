@@ -1,0 +1,49 @@
+@import "../../variables.less";
+@import "../lib/functions.less";
+.console-sns {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  .operation {
+    margin-top: 5px;
+    a{
+      font-size: 16px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border: 1px solid #ddd;
+      padding: 12px 0;
+      width: 30px;
+      border-radius: 3px;
+      text-align: center;
+      line-height: 0;
+    }
+    a:hover{
+      color:#259b24
+    }
+  }
+  .selected {
+    background-color: #eee;
+    padding: 5px;
+  }
+  .level {
+      & > li {
+          display: block;
+          padding: 5px 0 0 40px;
+          background: url(/assets/img/menu.png) no-repeat 20px 10px;
+      }
+  }
+  & > li {
+    display: block;
+    padding: 15px;
+    a {
+      color: #999;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 7px;
+      &:hover {
+        color: #999 - #111;
+        text-decoration: none;
+      }
+    }
+  }
+}

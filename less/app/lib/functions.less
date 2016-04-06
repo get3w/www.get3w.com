@@ -1,0 +1,60 @@
+@import "../../variables.less";
+
+// Opacity
+.gx-opacity(@opacity) {
+    opacity: @opacity;
+    // IE8 filter
+    @opacity-ie: (@opacity * 100);
+    filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+.gx-border-radius(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.gx-height(@height) {
+    height: @height;
+    line-height: @height;
+}
+
+.gx-transition(@times) {
+    -moz-transition: all @times;
+    -o-transition: all @times;
+    -webkit-transition: all @times;
+    transition: all @times;
+}
+
+.gx-init() {
+    font-family: @font-family;
+
+    a, p {
+        color: #757575;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ol, ul, li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    img {
+        border: 0;
+        vertical-align: top;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    input:focus, textarea:focus {
+        outline: 0 none;
+    }
+
+    textarea {
+        resize: none;
+    }
+}

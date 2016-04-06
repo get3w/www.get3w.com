@@ -1,0 +1,267 @@
+@import "../../variables.less";
+@import "../lib/functions.less";
+
+.console-settings {
+    margin-bottom: 45px;
+    padding: 20px;
+
+    .block {
+        padding: 45px 0;
+        margin: 0 50px;
+        border-bottom: solid 1px #e5e5e6;
+        color: #8f8f90;
+        font-size: 12px;
+        line-height: 24px;
+
+        .block-title {
+            font-size: 16px;
+            font-weight: 200;
+            color: #3bbf38;
+            margin-bottom: 5px;
+        }
+
+        .avatar img {
+            width: 46px;
+            height: 46px;
+            border: solid 1px #e5e5e6;
+        }
+
+        .block-form {
+            label {
+                display: block;
+                font-size: 14px;
+                margin-bottom: 5px;
+                height: 24px;
+                line-height: 24px;
+            }
+
+            input, textarea{
+                display: inline-block;
+                width: 320px;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+
+                &:focus {
+                    border-color: #4caf50;
+                    outline: 0;
+                    -webkit-box-shadow: 0 0 1px #4caf50;
+                    box-shadow: 0 0 1px #4caf50;
+                }
+
+                &.error {
+                    border-color: @red-600;
+                }
+            }
+
+            p {
+                margin: 0;
+            }
+
+            .gr {
+                color: #4caf50;
+            }
+
+            .line-p {
+                height: 1px;
+                border-bottom: 1px solid #e8e8e8;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .warn {
+        color: #8f8f90;
+    }
+
+    hr {
+        display: block;
+        height: 1px;
+        margin: 20px;
+        background-color: #e5e5e6;
+        border: none;
+
+        &.line {
+            width: 65%;
+            margin: 30px 0;
+            border: none;
+            // background-image: linear-gradient(to right, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0.8) 10%, rgba(204, 204, 204, 0.8) 50%,rgba(204, 204, 204, 0) 90%, rgba(204, 204, 204, 0) 100%);
+            background-image: linear-gradient( to right, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, .8) 10%, rgba(204, 204, 204, .8) 90%, rgba(204, 204, 204, 0) 100%);
+        }
+
+        &.space {
+            margin: 10px 0;
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+    .settings-title {
+        font-size: 16px;
+        font-weight: 200;
+        line-height: 2;
+        margin-bottom: 0;
+        color: @green-400;
+    }
+
+    .settings-summary {
+        font-size: 14px;
+        font-weight: 200;
+        line-height: 1.5;
+        color: #999;
+        margin-top: 0;
+    }
+
+    .label-title {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 10px;
+        color: #666;
+        min-height: 5px;
+
+        .optional {
+            font-weight: 400;
+            color: #9C9C9C;
+        }
+    }
+
+    .avatar-set {
+        position: relative;
+        height: 160px;
+
+        .set {
+            position: absolute;
+            bottom: 0;
+            left: 170px;
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            vertical-align: bottom;
+            margin-right: 5px;
+        }
+    }
+
+    .label-input {
+        position: relative;
+    }
+
+    .input-value {
+        font-size: 14px;
+        font-weight: 200;
+        line-height: 35px;
+        display: inline-block;
+        width: auto;
+        height: 35px;
+        padding-right: 60px;
+        margin-right: -30px;
+        padding-left: 5px;
+        min-width: 200px;
+        color: #666;
+        border-bottom: 1px #ccc solid;
+        background-color: transparent;
+    }
+
+    .form-control {
+        position: relative;
+        margin-top: 10px;
+
+        .explain {
+            font-size: 13px;
+            font-weight: 200;
+            line-height: 1.2;
+            margin: 10px 0;
+            color: #999;
+        }
+
+        .action {
+            margin: 10px 0;
+        }
+    }
+
+    .text, .textarea {
+        font-size: 14px;
+        font-weight: 200;
+        width: 90%;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        padding: 0 5px;
+        color: #666;
+        border: none;
+        border-bottom: solid 1px @green-400;
+        outline: none;
+        background: transparent;
+
+        &:focus {
+            border-bottom: solid 2px @green-400;
+        }
+    }
+
+    .text {
+        height: 35px;
+    }
+
+    .textarea {
+        height: 70px;
+        line-height: 20px;
+    }
+
+    .error {
+        border-bottom: 2px solid #f36c60;
+    }
+
+    .form-checkbox {
+        padding: 10px 20px;
+
+        label {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1;
+            color: #666;
+        }
+
+        .label-radio {
+            float: left;
+            margin: 10px 0 0 -20px;
+            vertical-align: middle;
+        }
+
+        .fa {
+            color: #ccc;
+            font-size: 32px;
+            width: 30px;
+            display: inline-block;
+            float: left;
+            margin-right: 5px;
+            user-select: none;
+            text-decoration: none;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            olor: #bbb;
+
+            &.fa-lock {
+                color: #e9dba5;
+                font-size: 42px;
+            }
+        }
+
+        .note {
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 1;
+            display: block;
+            min-height: 17px;
+            margin: 0;
+            color: #999;
+        }
+    }
+}

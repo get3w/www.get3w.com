@@ -1,0 +1,127 @@
+@green: #50b350;
+
+.tabs {
+    border-top: 1px solid #eeeff2;
+    border-bottom: 1px solid #eeeff2;
+
+    .item {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 49px;
+        display: block;
+        float: left;
+        padding: 0 30px;
+        margin-left: 5px;
+        transition: all 300ms ease-in-out;
+        color: #71767a;
+        box-shadow: 0 -3px 0 transparent inset;
+
+        i {
+          font-size: 16px;
+          margin-right: 5px;
+        }
+
+        &:hover,
+        &.active {
+            transition: all 300ms ease-in-out;
+            color: #52c27d;
+            box-shadow: 0 -3px 0 #52c27d inset;
+        }
+    }
+
+    .more {
+        position: relative;
+        float: right;
+    }
+
+    .select-all {
+        font-size: 14px;
+        font-weight: 200;
+        position: relative;
+        display: block;
+        padding: 0 10px;
+        color: rgb(153, 153, 153);
+
+        &:hover,
+        &.active {
+            transition: all 300ms ease-in-out;
+            color: #52c27d;
+            box-shadow: 0 -3px 0 #52c27d inset;
+        }
+    }
+
+    .category {
+        position: absolute;
+        right: 0;
+        display: none;
+        width: 300px;
+        text-align: left;
+        white-space: normal;
+
+        .contain {
+            border-radius: 3px;
+            background: #f7f8fa;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, .2);
+        }
+
+        .inside {
+            position: relative;
+            z-index: 5;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            color: #525558;
+            border: 2px solid #c7ced2;
+            border-radius: 3px;
+            background-color: white;
+        }
+
+        .header {
+            line-height: 44px;
+            position: relative;
+            z-index: 2110;
+            width: 100%;
+            height: 45px;
+            padding: 0 20px;
+            border-bottom: 1px solid rgba(34, 34, 34, .1);
+            border-radius: 1px 1px 0 0;
+            background-color: white;
+
+            h3 {
+                font-size: 14px;
+                font-weight: bold;
+                display: block;
+                float: left;
+                margin: 0;
+                text-transform: uppercase;
+                color: #71767a;
+            }
+        }
+
+        .filter {
+            padding: 20px;
+            background-color: #f7f8fa;
+
+            a {
+                font-size: 13px;
+                line-height: 22px;
+                position: relative;
+                display: inline-block;
+                float: left;
+                box-sizing: border-box;
+                width: 125px;
+                height: 22px;
+                margin: 0 0 3px 0;
+                padding: 0 0 0 5px;
+                cursor: pointer;
+                color: #71767a;
+                border-radius: 3px;
+                background-color: transparent;
+
+                &:hover {
+                    background-color: #dedede;
+                }
+            }
+        }
+    }
+}

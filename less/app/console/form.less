@@ -1,0 +1,136 @@
+@import "../../variables.less";
+@import "../lib/functions.less";
+
+.console_form {
+    .forminner {
+        padding: 15px 30px;
+        background: #fff;
+        z-index: 3;
+    }
+
+    li {
+        margin-bottom: 10px;
+
+        .tit {
+            /*width: 150px;*/
+            font-size: 14px;
+            margin-top: 7px;
+        }
+
+        .tit_plain {
+            font-size: 14px;
+            padding: 5px 0;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .submit_btn_box {
+            height: 37px;
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .submit_btn {
+            display: block;
+            width: 156px;
+            height: 37px;
+            background: #3bbf38;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            line-height: 37px;
+            cursor: pointer;
+            border-radius: 3px;
+            box-shadow: 0 3px 4px #ccc;
+            border: 0 none;
+        }
+    }
+
+    .element_text {
+        width: 95%;
+        height: 21px;
+        line-height: 21px;
+        padding: 5px;
+        border: 0 none;
+        border-bottom: 1px solid #dcdcdc;
+        background: transparent;
+        font-size: 14px;
+    }
+
+    .element_textarea {
+        width: 95%;
+        height: 66px;
+        line-height: 22px;
+        padding: 5px;
+        border: 0 none;
+        border: 1px solid #dcdcdc;
+        background: transparent;
+        font-size: 14px;
+    }
+
+    .element_upload_image {
+        position: relative;
+
+        img {
+            max-width: 180px;
+        }
+    }
+
+    .element_editor {
+        position: relative;
+    }
+
+    .element_focus {
+        margin-bottom: -1px;
+        border-bottom: 2px solid @green-A700;
+    }
+
+    .element_error {
+        margin-bottom: -1px;
+        border-bottom: 2px solid #f36c60;
+    }
+
+    .upload_btn {
+        display: block;
+        width: 97px;
+        height: 35px;
+        background: @light-blue-A700;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        line-height: 37px;
+        cursor: pointer;
+        border-radius: 3px;
+        float: right;
+        position: absolute;
+        left: 290px;
+        bottom: 0;
+        box-shadow: 0 3px 4px #ccc;
+        border: 0 none;
+    }
+
+    .fontstrong {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 7px;
+        display: block;
+    }
+
+    .fonttips {
+        color: #999;
+        display: block;
+        position: relative;
+        width: 100% !important;
+    }
+
+    .formbodyheight {
+        height: 400px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: #fff;
+    }
+
+    .form_visible {
+        overflow-y: visible;
+    }
+}

@@ -1,0 +1,236 @@
+@import "../../variables.less";
+@import "../lib/functions.less";
+
+.console_view {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .section {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        .section_function {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 3;
+
+            a {
+                width: 36px;
+                height: 36px;
+                line-height: 36px;
+                list-style: none;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                vertical-align: middle;
+                background: rgba(20,20,20,0.8);
+                opacity: 0.5;
+            }
+
+            a:hover {
+                opacity: 1;
+            }
+
+            .on {
+                background-color: #2baf2b;
+                opacity: 1;
+            }
+        }
+    }
+
+    .editable, .addable {
+        position: relative;
+    }
+
+    .edit_mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(255,255,255,0.4);
+        border: 1px solid #3bbf38;
+        top: 0;
+        left: 0;
+        display: none;
+        cursor: pointer;
+        padding: 5px;
+        margin-top: -6px;
+        margin-left: -6px;
+        z-index: 1;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+    }
+
+    .edit_transform {
+        display: none;
+    }
+
+    .edit_drag {
+        cursor: move;
+
+        .edit_transform {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            border: 1px solid #16a951;
+            font-size: 12px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        .edit_transform .anchor[data-direction=rotate] {
+            left: 50%;
+            top: -3em;
+            margin-left: -0.5em;
+            margin-bottom: -0.4em;
+            cursor: -webkit-grab;
+            cursor: -moz-grab;
+            cursor: -ms-grab;
+            cursor: grab;
+            z-index: 1;
+        }
+
+        .edit_transform .anchor[data-direction=line] {
+            left: 50%;
+            top: -2em;
+            width: 1px;
+            height: 1.5em;
+            border: none;
+            background-color: #16a951;
+        }
+
+        .edit_transform .anchor[data-direction=n] {
+            left: 50%;
+            bottom: 100%;
+            margin-left: -0.5em;
+            margin-bottom: -0.4em;
+            cursor: row-resize;
+        }
+
+        .edit_transform .anchor[data-direction=e] {
+            left: 100%;
+            top: 50%;
+            margin-top: -0.5em;
+            margin-left: -0.4em;
+            cursor: col-resize;
+        }
+
+        .edit_transform .anchor[data-direction=s] {
+            left: 50%;
+            top: 100%;
+            margin-left: -0.5em;
+            margin-top: -0.4em;
+            cursor: row-resize;
+        }
+
+        .edit_transform .anchor[data-direction=w] {
+            right: 100%;
+            top: 50%;
+            margin-top: -0.5em;
+            margin-right: -0.4em;
+            cursor: col-resize;
+        }
+
+        .edit_transform .anchor[data-direction=nw] {
+            right: 100%;
+            bottom: 100%;
+            margin-right: -0.4em;
+            margin-bottom: -0.4em;
+            cursor: nw-resize;
+        }
+
+        .edit_transform .anchor[data-direction=ne] {
+            left: 100%;
+            bottom: 100%;
+            margin-left: -0.4em;
+            margin-bottom: -0.4em;
+            cursor: ne-resize;
+        }
+
+        .edit_transform .anchor[data-direction=se] {
+            left: 100%;
+            top: 100%;
+            margin-left: -0.4em;
+            margin-top: -0.4em;
+            cursor: se-resize;
+        }
+
+        .edit_transform .anchor[data-direction=sw] {
+            right: 100%;
+            top: 100%;
+            margin-right: -0.4em;
+            margin-top: -0.4em;
+            cursor: sw-resize;
+        }
+
+        .edit_transform .anchor {
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid #0aa344;
+            cursor: pointer;
+            pointer-events: all;
+        }
+    }
+
+    .edit_btn {
+        position: absolute !important;
+        width: 62px !important;
+        height: 26px !important;
+        text-align: center !important;
+        line-height: 26px !important;
+        background: #3bbf38 !important;
+        border-radius: 3px !important;
+        top: 50% !important;
+        margin-top: -14px !important;
+        left: 50% !important;
+        display: none;
+        margin-left: -31px !important;
+        box-shadow: 0 0 5px #999 !important;
+        font-weight: normal;
+        font-size: 12px !important;
+        color: #fff !important;
+        text-decoration: initial !important;
+        z-index: 2;
+    }
+
+    .add_btn {
+        display: inline-block;
+        width: 62px !important;
+        height: 26px !important;
+        text-align: center !important;
+        line-height: 26px !important;
+        background: #3bbf38 !important;
+        border-radius: 3px !important;
+        box-shadow: 0 0 5px #999 !important;
+        font-weight: normal;
+        font-size: 12px !important;
+        color: #fff !important;
+        text-decoration: initial !important;
+        z-index: 2;
+    }
+
+    .add_btn_h {
+        margin-left: 10px;
+    }
+
+    .add_btn_v {
+        margin-top: 10px;
+    }
+}
+
+.console_view_scroll {
+    height: auto;
+    min-height: 100%;
+}

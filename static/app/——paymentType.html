@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/public.js"></script>
+    <script language="javascript" type="text/javascript" src="js/swiper.min.js"></script>
+</head>
+<body>
+    <div class="mTop">
+        <a href="javascript:void(history.back(-1))" class="mTop_back"></a>
+        党费缴纳
+    </div>
+    <div class="m2jf_icon autoImg"><img src="images/jf_icon1.png"></div>
+    <div class="m2jf_stxt">本次待缴纳党费：<span class="cor_red">45.5元</span></div>
+    <a class="mBm_btn1" href="paymentType.html">立即缴费</a>
+
+    <!--支付方式-->
+    <div class="mLayerBg"></div>
+    <div class="mPayLaer">
+        <i class="mPay_close"></i>
+        <div class="mPay_t1">选择付款方式</div>
+        <ul class="mPay_pitms">
+            <li><img src="images/pay_icon1.png">微信 <i></i></li>
+            <li class="on"><a href="paymentDetail.html"><img src="images/pay_icon2.png">支付宝 <i></i><a href="paymentDetail.html"></li>
+            <li><img src="images/pay_icon3.png">和包 <i></i></li>
+            <li><img src="images/pay_icon4.png">中国银行储蓄卡（网银）<i></i></li>
+            <li class="mPay_other"><a href="paymentAddCard.html"><img src="images/pay_icon5.png">添加新卡 <i class="mPer_arrow"></i></li>
+        </ul>
+    </div>
+
+    <script language="javascript">
+        $(".mPay_close").click(function () {
+            $(".mPayLaer,.mLayerBg").fadeOut(300);
+            $(".mPayLaer").addClass("mPayLaer2");
+        });
+    </script>
+</body>
+</html>
