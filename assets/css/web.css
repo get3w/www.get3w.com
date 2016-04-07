@@ -329,21 +329,33 @@ body {
   transition: right 0.3s ease-in-out;
 }
 .carrousel {
-  padding-top: 90px;
+  padding-top: 40px;
   padding-bottom: 90px;
   text-align: center;
   color: #ffffff;
 }
+.carrousel .ico {
+  margin: auto;
+  margin-bottom: 20px;
+}
+.carrousel .ico img {
+  width: 100px;
+  height: 100px;
+}
 .carrousel .solgan {
-  font-size: 55px;
-  font-weight: 300;
+  font-size: 40px;
+  font-weight: 400;
   line-height: 1.2;
+  margin: auto;
   margin-bottom: 30px;
+  max-width: 900px;
   text-rendering: optimizeLegibility;
 }
 .carrousel .sub-slogan {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.25;
+  max-width: 600px;
+  margin: auto;
 }
 .carrousel .start-button {
   margin-top: 50px;
