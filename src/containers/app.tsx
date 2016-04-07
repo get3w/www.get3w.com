@@ -8,7 +8,6 @@ import * as models from '../api/models'
 import * as states from '../constants/states';
 import Top from "../containers/top"
 import Header from "../containers/header"
-import Nav from "../components/nav"
 import Footer from "../components/footer"
 import * as links from '../constants/links';
 

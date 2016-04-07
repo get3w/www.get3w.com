@@ -29,15 +29,7 @@ export default class IndexPage extends React.Component<P, S> {
   }
 
   componentDidMount() {
-    client.orgActivities.get(this.props.params.id, (err: models.Error, res: models.OrgActivity) => {
-      if (!err && res) {
-        this.setState({
-          oa: res
-        })
-      } else {
-        utils.Swal.error(err)
-      }
-    })
+    
   }
 
   render() {

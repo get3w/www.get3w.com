@@ -44,14 +44,7 @@ export default class DongTaiPage extends React.Component<P, S> {
   }
 
   load(orgID: number) {
-    client.orgActivities.list(orgID, this.state.title, (err: models.Error, res: Array<models.OrgActivity>) => {
-      this.setState({
-        oas: res,
-        title: this.state.title,
-        winType: '',
-        id: null
-      })
-    })
+    
   }
 
   render() {

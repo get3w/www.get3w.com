@@ -104,7 +104,7 @@ class Header extends React.Component<P, S> {
           You can change any websites with Get3W Editor, Enter your website URL below and make changes.
         </p>
         <div className="start-button">
-          <input type="text" placeholder="http://example.com" className="start-input" />
+          <input type="text" defaultValue="http://www.get3w.com" className="start-input" />
           <a href="/signup/index.html?returnUrl=%2F" className="g3-btn register-btn">
             <span>Start edit</span>
             <i className="fa fa-angle-right"></i>

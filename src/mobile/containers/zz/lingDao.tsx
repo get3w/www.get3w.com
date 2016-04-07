@@ -38,14 +38,7 @@ export default class Page extends React.Component<P, S> {
   }
 
   load(orgID: number) {
-    client.orgLeaders.list(orgID, true, '', 0, (err: models.Error, res: Array<models.OrgLeader>) => {
-      this.setState({
-        ols: res,
-      })
-      this.state.ols.forEach((ol: models.OrgLeader) => {
-        
-      })
-    })
+    
   }
 
   render() {

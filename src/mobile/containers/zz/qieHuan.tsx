@@ -33,11 +33,7 @@ export default class Page extends React.Component<P, S> {
   }
 
   load(orgID: number) {
-    client.orgs.list(orgID, false, (err: models.Error, res: Array<models.Org>) => {
-      this.setState({
-        orgs: res,
-      })
-    })
+    
   }
 
   render() {

@@ -48,7 +48,7 @@
   z-index: 999998;
 }
 .g3w-inner-loading {
-  margin: 15%;
+  padding: 15%;
   text-align: center;
 }
 .g3w-inner-loading span,
