@@ -69,7 +69,6 @@
     "lib/utils.ts",
     "lib/utils/base64.ts",
     "lib/utils/utf8.ts",
-    "lib/webUtils.ts",
     "mobile/constants/index.ts",
     "mobile/constants/links.ts",
     "reducers/auth.ts",

@@ -98,14 +98,15 @@ class Header extends React.Component<P, S> {
           <img src="/assets/img/features/logo-large.png" />
         </div>
         <p className="solgan">
-          Suggest Edits for the World Wide Web
+          Edit the World Wide Web
         </p>
         <p className="sub-slogan">
-          you can change any websites with Get3W Suggest Edits, your suggestions will saved here until the website owner approves them.
+          You can change any websites with Get3W Editor, Enter your website URL below and make changes.
         </p>
         <div className="start-button">
+          <input type="text" placeholder="http://example.com" className="start-input" />
           <a href="/signup/index.html?returnUrl=%2F" className="g3-btn register-btn">
-            <span>Sign up for free</span>
+            <span>Start edit</span>
             <i className="fa fa-angle-right"></i>
           </a>
         </div>
@@ -114,30 +115,30 @@ class Header extends React.Component<P, S> {
 
     return (
       <header className="header liner-bg">
-      <div className="ct-container">
-        <div className="navigation">
-          <div className="navbar-header">
-            <a className="logo ct-fl" href="/"><img src="/assets/img/logo.png" alt="logo" /></a>
-            <a className="navbar-toggle ct-fr" href="/"><i className="fa fa-reorder" /></a>
-          </div>
-          <div className="navbar-collapse collapse">
-            <nav className="nav">
-              <a href="" style={{display: 'none'}}>Features</a>
-              <a href="">Explore</a>
-              <a href="">Pricing</a>
-            </nav>
-            <div className="navbar-right">
-              <form className="input-form" onSubmit={this.onSearch.bind(this) }>
-                <input value={utils.Page.getUrlVar('q')} className="input-text" />
-                <a className="fa fa-search" href="javascript:void(0)" onClick={this.onSearch.bind(this) }></a>
-              </form>
-              {btnElement}
+        <div className="ct-container">
+          <div className="navigation">
+            <div className="navbar-header">
+              <a className="logo ct-fl" href="/"><img src="/assets/img/logo.png" alt="logo" /></a>
+              <a className="navbar-toggle ct-fr" href="/"><i className="fa fa-reorder" /></a>
+            </div>
+            <div className="navbar-collapse collapse">
+              <nav className="nav">
+                <a href="" style={{ display: 'none' }}>Features</a>
+                <a href="">Explore</a>
+                <a href="">Pricing</a>
+              </nav>
+              <div className="navbar-right">
+                <form className="input-form" onSubmit={this.onSearch.bind(this) }>
+                  <input value={utils.Page.getUrlVar('q') } className="input-text" />
+                  <a className="fa fa-search" href="javascript:void(0)" onClick={this.onSearch.bind(this) }></a>
+                </form>
+                {btnElement}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {sloganEl}
-        </header>
+        {sloganEl}
+      </header>
     )
   }
 }
